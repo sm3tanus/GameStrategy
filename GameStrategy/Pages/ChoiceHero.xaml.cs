@@ -24,5 +24,10 @@ namespace GameStrategy.Pages
         {
             InitializeComponent();
         }
+
+        private void warriorBt_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new ListOfMyHero());
+        }
     }
 }

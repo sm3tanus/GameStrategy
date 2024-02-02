@@ -6,8 +6,8 @@
       xmlns:local="clr-namespace:GameStrategy.Pages"
       mc:Ignorable="d" 
       Height="1080" Width="1920"
-      Title="ListOfMyHero" Background="White">
-
+      
+      Title="ListOfMyHero">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -15,25 +15,90 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        
+        <TextBlock Grid.RowSpan="4"
+                   Grid.ColumnSpan="8">
+            <TextBlock.Background>
+                <ImageBrush ImageSource="/Images/night_forest.jpg" Stretch="Fill"/>
+            </TextBlock.Background>
+        </TextBlock>
+        
+        
+        <TextBlock Background="#7F242E83"
+                   Grid.RowSpan="4"
+                   Grid.ColumnSpan="8"></TextBlock>
 
-        <ListView   FontSize="32"
+        <TextBlock Background="#7F010419"
+           Grid.RowSpan="3"
+           Grid.Row="0"
+           Grid.ColumnSpan="8"></TextBlock>
+
+
+        <ListView   FontSize="22"
                     Width="1920"
                     Height="270"
                     Grid.Row="0"
                     Name="ListSettings"
                     VerticalAlignment="Top"
-                    BorderBrush="White"
+                    Grid.ColumnSpan="8"
+                    FontWeight="Bold"
                     ItemsSource="{Binding tasks}">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header="Health" Width="240">
+                        <GridViewColumn Width="240">
+                            <StackPanel>
+                                <Image Source="\Images\health.png"
+                                        Width="80">
+                                </Image>
+                                <TextBlock HorizontalAlignment="Center">
+                                    health
+                                </TextBlock>
+                            </StackPanel>
+
                             <GridViewColumn.HeaderContainerStyle>
                                 <Style TargetType="{x:Type GridViewColumnHeader}">
-                                    <Setter Property="Background" Value="#FFA3AAE8" />
+                                    <Setter Property="Background" Value="#FF7684FF" />
                                     <Setter Property="Foreground" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#FFA3AAE8"/>
-                                    <Setter Property="Height" Value="100"/>
+                                    <Setter Property="BorderBrush" Value="#FF7684FF"/>
+                                    <Setter Property="Height" Value="130"/>
+                                </Style>
+                            </GridViewColumn.HeaderContainerStyle>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Name}" Foreground="White" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <GridViewColumn Width="240">
+                            <StackPanel>
+                                <Image Source="\Images\mana.png"
+                                       Width="80"></Image>
+                                <TextBlock HorizontalAlignment="Center">
+                                        mana
+                                </TextBlock>
+                            </StackPanel>
+                            <GridViewColumn.HeaderContainerStyle>
+                                <Style TargetType="{x:Type GridViewColumnHeader}">
+                                    <Setter Property="Background" Value="#FF7684FF" />
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="BorderBrush" Value="#FF7684FF"/>
                                 </Style>
                             </GridViewColumn.HeaderContainerStyle>
                             <GridViewColumn.CellTemplate>
@@ -45,29 +110,20 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Header="Mana" Width="240">
-                            <GridViewColumn.HeaderContainerStyle>
-                                <Style TargetType="{x:Type GridViewColumnHeader}">
-                                    <Setter Property="Background" Value="#FFA3AAE8" />
-                                    <Setter Property="Foreground" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#FFA3AAE8"/>
-                                </Style>
-                            </GridViewColumn.HeaderContainerStyle>
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding Name}" Foreground="White"/>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
+                        <GridViewColumn Width="240">
+                            <StackPanel>
+                                <Image Source="\Images\p.damage.png"
+                                       Width="80"></Image>
+                                <TextBlock HorizontalAlignment="Center">
+                                       damage
+                                </TextBlock>
+                            </StackPanel>
 
-                        <GridViewColumn Header="P.damage" Width="240">
                             <GridViewColumn.HeaderContainerStyle>
                                 <Style TargetType="{x:Type GridViewColumnHeader}">
-                                    <Setter Property="Background" Value="#FFA3AAE8" />
+                                    <Setter Property="Background" Value="#FF7684FF" />
                                     <Setter Property="Foreground" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#FFA3AAE8"/>
+                                    <Setter Property="BorderBrush" Value="#FF7684FF"/>
                                 </Style>
                             </GridViewColumn.HeaderContainerStyle>
                             <GridViewColumn.CellTemplate>
@@ -77,12 +133,20 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Header="Armor" Width="240">
+                        <GridViewColumn Width="240">
+                            <StackPanel>
+                                <Image Source="\Images\armor.png"
+                                       Width="80"></Image>
+                                <TextBlock HorizontalAlignment="Center">
+                                       armor
+                                </TextBlock>
+                            </StackPanel>
+
                             <GridViewColumn.HeaderContainerStyle>
                                 <Style TargetType="{x:Type GridViewColumnHeader}">
-                                    <Setter Property="Background" Value="#FFA3AAE8" />
+                                    <Setter Property="Background" Value="#FF7684FF" />
                                     <Setter Property="Foreground" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#FFA3AAE8"/>
+                                    <Setter Property="BorderBrush" Value="#FF7684FF"/>
                                 </Style>
                             </GridViewColumn.HeaderContainerStyle>
                             <GridViewColumn.CellTemplate>
@@ -92,12 +156,20 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Header="M.damage" Width="240">
+                        <GridViewColumn Width="240">
+                            <StackPanel>
+                                <Image Source="\Images\mana_damage.png"
+                                        Width="80"></Image>
+                                <TextBlock HorizontalAlignment="Center">
+                                        magic damage
+                                </TextBlock>
+                            </StackPanel>
+
                             <GridViewColumn.HeaderContainerStyle>
                                 <Style TargetType="{x:Type GridViewColumnHeader}">
-                                    <Setter Property="Background" Value="#FFA3AAE8" />
+                                    <Setter Property="Background" Value="#FF7684FF" />
                                     <Setter Property="Foreground" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#FFA3AAE8"/>
+                                    <Setter Property="BorderBrush" Value="#FF7684FF"/>
                                 </Style>
                             </GridViewColumn.HeaderContainerStyle>
                             <GridViewColumn.CellTemplate>
@@ -107,12 +179,20 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Header="M.defense" Width="240">
+                        <GridViewColumn Width="240">
+                            <StackPanel>
+                                <Image Source="\Images\magic_defense.png"
+                                        Width="80"></Image>
+                                <TextBlock HorizontalAlignment="Center">
+                                        magic defense
+                                </TextBlock>
+                            </StackPanel>
+
                             <GridViewColumn.HeaderContainerStyle>
                                 <Style TargetType="{x:Type GridViewColumnHeader}">
-                                    <Setter Property="Background" Value="#FFA3AAE8" />
+                                    <Setter Property="Background" Value="#FF7684FF" />
                                     <Setter Property="Foreground" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#FFA3AAE8"/>
+                                    <Setter Property="BorderBrush" Value="#FF7684FF"/>
                                 </Style>
                             </GridViewColumn.HeaderContainerStyle>
                             <GridViewColumn.CellTemplate>
@@ -122,12 +202,20 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Header="Crt.chanse" Width="240">
+                        <GridViewColumn Width="240">
+                            <StackPanel>
+                                <Image Source="\Images\percent.png"
+                                        Width="80"></Image>
+                                <TextBlock HorizontalAlignment="Center">
+                                        crit chanse
+                                </TextBlock>
+                            </StackPanel>
+
                             <GridViewColumn.HeaderContainerStyle>
                                 <Style TargetType="{x:Type GridViewColumnHeader}">
-                                    <Setter Property="Background" Value="#FFA3AAE8" />
+                                    <Setter Property="Background" Value="#FF7684FF" />
                                     <Setter Property="Foreground" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#FFA3AAE8"/>
+                                    <Setter Property="BorderBrush" Value="#FF7684FF"/>
                                 </Style>
                             </GridViewColumn.HeaderContainerStyle>
                             <GridViewColumn.CellTemplate>
@@ -137,12 +225,20 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Header="Crt.damage" Width="240">
+                        <GridViewColumn Width="240">
+                            <StackPanel>
+                                <Image Source="\Images\crit_damage.png"
+                                        Width="80"></Image>
+                                <TextBlock HorizontalAlignment="Center">
+                                        crit damage
+                                </TextBlock>
+                            </StackPanel>
+
                             <GridViewColumn.HeaderContainerStyle>
                                 <Style TargetType="{x:Type GridViewColumnHeader}">
-                                    <Setter Property="Background" Value="#FFA3AAE8" />
+                                    <Setter Property="Background" Value="#FF7684FF" />
                                     <Setter Property="Foreground" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#FFA3AAE8"/>
+                                    <Setter Property="BorderBrush" Value="#FF7684FF"/>
                                 </Style>
                             </GridViewColumn.HeaderContainerStyle>
                             <GridViewColumn.CellTemplate>
@@ -155,7 +251,182 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        
+        <!--Strenght-->
+        <TextBlock Foreground="White"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Right"
+                   FontSize="32"
+                   FontWeight="Bold">Strenght</TextBlock>
+        
+        <Image Source="\Images\power.png"
+                Width="80"
+               Grid.Row="1" 
+               HorizontalAlignment="Left"
+               VerticalAlignment="Center"></Image>
 
-        <TextBlock Grid.RowSpan="2"></TextBlock>
+        <TextBlock Foreground="White"
+           Grid.Row="1"
+           Grid.Column="1"
+           VerticalAlignment="Center"
+           HorizontalAlignment="Center"
+           FontSize="32" 
+           FontWeight="Bold">1</TextBlock>
+        
+        <Button
+          HorizontalAlignment="Left"
+          Grid.Row="1"
+          Grid.Column="2"
+          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+          Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+          Background="#FF7684FF" 
+          BorderBrush="#FF7684FF"
+          FontSize="22" 
+          Width="50"
+          Height="50"
+          FontWeight="Bold">
+            +
+        </Button>
+
+        <!--Dexterity-->
+        <TextBlock Foreground="White"
+           Grid.Row="1"
+           Grid.Column="7"
+           VerticalAlignment="Center"
+           HorizontalAlignment="Left"
+           FontSize="32"
+           FontWeight="Bold">Dexterity</TextBlock>
+
+        <Image Source="\Images\dexterity.png"
+           Width="80"
+           Grid.Row="1" 
+           Grid.Column="7"
+           HorizontalAlignment="Right"
+           VerticalAlignment="Center"></Image>
+
+        <TextBlock Foreground="White"
+           Grid.Row="1"
+           Grid.Column="6"
+           VerticalAlignment="Center"
+           HorizontalAlignment="Center"
+           FontSize="32"
+           FontWeight="Bold">1</TextBlock>
+
+        <Button
+          HorizontalAlignment="Right"
+          Grid.Row="1"
+          Grid.Column="5"
+          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+          Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+          Background="#FF7684FF" 
+          BorderBrush="#FF7684FF"
+          FontSize="22"
+          Width="50"
+          Height="50"
+          FontWeight="Bold">
+                    +
+        </Button>
+
+        <!--Inteligence-->
+        <TextBlock Foreground="White"
+           Grid.Row="2"
+           Grid.Column="7"
+           VerticalAlignment="Center"
+           HorizontalAlignment="Left"
+           FontSize="32"
+           FontWeight="Bold">Inteligence</TextBlock>
+
+        <Image Source="\Images\inteligence.png"
+           Width="80"
+           Grid.Row="2" 
+           Grid.Column="7"
+           HorizontalAlignment="Right"
+           VerticalAlignment="Center"></Image>
+
+        <TextBlock Foreground="White"
+           Grid.Row="2"
+           Grid.Column="6"
+           VerticalAlignment="Center"
+           HorizontalAlignment="Center"
+           FontSize="32"
+           FontWeight="Bold">1</TextBlock>
+
+        <Button
+          HorizontalAlignment="Right"
+          Grid.Row="2"
+          Grid.Column="5"
+          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+          Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+          Background="#FF7684FF" 
+          BorderBrush="#FF7684FF"
+          FontSize="22"
+          Width="50"
+          Height="50"
+          FontWeight="Bold">
+                    +
+        </Button>
+
+        <!--Vitality-->
+        <TextBlock Foreground="White"
+           Grid.Row="2"
+           Grid.Column="0"
+           VerticalAlignment="Center"
+           HorizontalAlignment="Right"
+           FontSize="32"
+           FontWeight="Bold">Vitality</TextBlock>
+
+        <Image Source="\Images\vitality.png"
+           Width="80"
+           Grid.Row="2" 
+           Grid.Column="0"
+           HorizontalAlignment="Left"
+           VerticalAlignment="Center"></Image>
+
+        <TextBlock Foreground="White"
+            Grid.Row="2"
+            Grid.Column="1"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            FontSize="32"
+            FontWeight="Bold">1</TextBlock>
+
+        <Button
+            HorizontalAlignment="Left"
+            Grid.Row="2"
+            Grid.Column="2"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+            Background="#FF7684FF" 
+            BorderBrush="#FF7684FF"
+            FontSize="22" 
+            Width="50"
+            Height="50"
+            FontWeight="Bold">
+            +
+        </Button>
+        
+        <!--Points-->
+        <StackPanel Grid.RowSpan="2" 
+            Width="300"
+            Grid.Row="1"
+            Grid.Column="3"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <TextBlock Foreground="White"
+               FontSize="40"
+               TextAlignment="Center"
+               FontWeight="Bold">Count of points
+            </TextBlock>
+            <Image Source="\Images\star.png">
+            </Image>
+            <TextBlock Foreground="White"
+                       FontSize="60"
+                       TextAlignment="Center"
+                       FontWeight="Bold">2
+            </TextBlock>
+        </StackPanel>
     </Grid>
 </Page>

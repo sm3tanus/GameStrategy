@@ -129,6 +129,51 @@
   <ItemGroup>
     <Resource Include="Images\wizard.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\health.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mana_damage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\armor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\magic_defense.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\percent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\crit_damage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\p.damage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\forest.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\night_forest.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\power.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\dexterity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\inteligence.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\vitality.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\star.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

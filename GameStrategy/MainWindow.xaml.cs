@@ -23,6 +23,7 @@ namespace GameStrategy
         public MainWindow()
         {
             InitializeComponent();
+            mainFrame.NavigationService.Navigate(new Pages.ChoiceHero());
         }
     }
 }
