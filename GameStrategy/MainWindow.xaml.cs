@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameStrategy.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,8 @@ namespace GameStrategy
         {
             InitializeComponent();
             mainFrame.NavigationService.Navigate(new Pages.ChoiceHero());
+            Hero hero = new Hero("luna", 1,1,5,1,1,1,1,11,1,1,1,1,1,1,1);
+            CRUD.CreateHero(hero);
         }
     }
 }

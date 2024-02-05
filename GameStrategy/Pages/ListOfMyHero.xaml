@@ -15,8 +15,8 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
-        
+
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -27,16 +27,16 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
-        
+
+
         <TextBlock Grid.RowSpan="4"
                    Grid.ColumnSpan="8">
             <TextBlock.Background>
                 <ImageBrush ImageSource="/Images/night_forest.jpg" Stretch="Fill"/>
             </TextBlock.Background>
         </TextBlock>
-        
-        
+
+
         <TextBlock Background="#7F242E83"
                    Grid.RowSpan="4"
                    Grid.ColumnSpan="8"></TextBlock>
@@ -54,8 +54,7 @@
                     Name="ListSettings"
                     VerticalAlignment="Top"
                     Grid.ColumnSpan="8"
-                    FontWeight="Bold"
-                    ItemsSource="{Binding tasks}">
+                    FontWeight="Bold">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
@@ -80,7 +79,7 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding Name}" Foreground="White" />
+                                        <TextBlock Text="{Binding Health}" Foreground="White" />
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
@@ -104,7 +103,7 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding Name}" Foreground="White"/>
+                                        <TextBlock Text="{Binding Mana}" Foreground="White"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
@@ -128,7 +127,7 @@
                             </GridViewColumn.HeaderContainerStyle>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock HorizontalAlignment="Center" Text="{Binding Description}" Foreground="White"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="{Binding Damage}" Foreground="White"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -151,7 +150,7 @@
                             </GridViewColumn.HeaderContainerStyle>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock HorizontalAlignment="Center" Text="{Binding Description}" Foreground="White"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="{Binding Armor}" Foreground="White"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -174,7 +173,7 @@
                             </GridViewColumn.HeaderContainerStyle>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock HorizontalAlignment="Center" Text="{Binding Description}" Foreground="White"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="{Binding MagicDamage}" Foreground="White"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -197,7 +196,7 @@
                             </GridViewColumn.HeaderContainerStyle>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock HorizontalAlignment="Center" Text="{Binding Description}" Foreground="White"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="{Binding MagicDefense}" Foreground="White"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -207,7 +206,7 @@
                                 <Image Source="\Images\percent.png"
                                         Width="80"></Image>
                                 <TextBlock HorizontalAlignment="Center">
-                                        crit chanse
+                                        crit chance
                                 </TextBlock>
                             </StackPanel>
 
@@ -220,7 +219,7 @@
                             </GridViewColumn.HeaderContainerStyle>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock HorizontalAlignment="Center" Text="{Binding Description}" Foreground="White"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="{Binding CritChance}" Foreground="White"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -243,7 +242,7 @@
                             </GridViewColumn.HeaderContainerStyle>
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock HorizontalAlignment="Center" Text="{Binding Description}" Foreground="White"/>
+                                    <TextBlock HorizontalAlignment="Center" Text="{Binding CritDamage}" Foreground="White"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -251,7 +250,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        
+
         <!--Strenght-->
         <TextBlock Foreground="White"
                    Grid.Row="1"
@@ -260,7 +259,7 @@
                    HorizontalAlignment="Right"
                    FontSize="32"
                    FontWeight="Bold">Strenght</TextBlock>
-        
+
         <Image Source="\Images\power.png"
                 Width="80"
                Grid.Row="1" 
@@ -273,8 +272,10 @@
            VerticalAlignment="Center"
            HorizontalAlignment="Center"
            FontSize="32" 
-           FontWeight="Bold">1</TextBlock>
-        
+           FontWeight="Bold"
+           Name="CountPowerTb"
+           />
+
         <Button
           HorizontalAlignment="Left"
           Grid.Row="1"
@@ -286,7 +287,8 @@
           FontSize="22" 
           Width="50"
           Height="50"
-          FontWeight="Bold">
+          FontWeight="Bold"
+          Name="AddPowerBt" Click="AddPowerBt_Click">
             +
         </Button>
 
@@ -312,7 +314,8 @@
            VerticalAlignment="Center"
            HorizontalAlignment="Center"
            FontSize="32"
-           FontWeight="Bold">1</TextBlock>
+           FontWeight="Bold"
+           Name="CountDexterityTb"/> 
 
         <Button
           HorizontalAlignment="Right"
@@ -325,8 +328,9 @@
           FontSize="22"
           Width="50"
           Height="50"
-          FontWeight="Bold">
-                    +
+          FontWeight="Bold"
+          Name="AddDexterityBt" Click="AddDexterityBt_Click">
+            +
         </Button>
 
         <!--Inteligence-->
@@ -351,7 +355,8 @@
            VerticalAlignment="Center"
            HorizontalAlignment="Center"
            FontSize="32"
-           FontWeight="Bold">1</TextBlock>
+           FontWeight="Bold"
+           Name="CountInteligienceTb"/>
 
         <Button
           HorizontalAlignment="Right"
@@ -364,8 +369,9 @@
           FontSize="22"
           Width="50"
           Height="50"
-          FontWeight="Bold">
-                    +
+          FontWeight="Bold"
+          Name="AddInteligienceBt" Click="AddInteligienceBt_Click">
+            +
         </Button>
 
         <!--Vitality-->
@@ -390,10 +396,11 @@
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
             FontSize="32"
-            FontWeight="Bold">1</TextBlock>
+            FontWeight="Bold"
+            Name="CountVitalityTb"/> 
 
         <Button
-            HorizontalAlignment="Left"
+            HorizontalAlignment="Right"
             Grid.Row="2"
             Grid.Column="2"
             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
@@ -403,18 +410,19 @@
             FontSize="22" 
             Width="50"
             Height="50"
-            FontWeight="Bold">
+            FontWeight="Bold"
+            Name="AddVitalityBt" Margin="0,110,190,110" Click="AddVitalityBt_Click">
             +
         </Button>
-        
+
         <!--Points-->
         <StackPanel Grid.RowSpan="2" 
             Width="300"
-            Grid.Row="1"
+            Grid.Row="2"
             Grid.Column="3"
             Grid.ColumnSpan="2"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center">
+            VerticalAlignment="Top">
             <TextBlock Foreground="White"
                FontSize="40"
                TextAlignment="Center"
@@ -425,8 +433,34 @@
             <TextBlock Foreground="White"
                        FontSize="60"
                        TextAlignment="Center"
-                       FontWeight="Bold">2
+                       FontWeight="Bold"
+                       Name="CountPointsTb">2
             </TextBlock>
+        </StackPanel>
+        
+        <!--lvl-->
+        <StackPanel Grid.Column="3"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="1"
+                    Orientation="Vertical">
+            <TextBlock Foreground="White"
+                       FontSize="60"
+                       TextAlignment="Center"
+                       FontWeight="Bold">Your level:</TextBlock>
+            <TextBlock Foreground="White"
+                       FontSize="60"
+                       TextAlignment="Center"
+                       FontWeight="Bold"
+                       Name="myLevelTb"></TextBlock>
+        </StackPanel>
+        
+        <StackPanel Orientation="Vertical"
+                    Grid.Column="3"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="1"
+                    VerticalAlignment="Bottom">
+            <Button Background="#FF7684FF"
+                    Name="AddPointsBt" Click="AddPointsBt_Click">+1000</Button>
         </StackPanel>
     </Grid>
 </Page>
