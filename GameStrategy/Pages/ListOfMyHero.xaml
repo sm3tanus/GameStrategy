@@ -54,7 +54,7 @@
                     Name="ListSettings"
                     VerticalAlignment="Top"
                     Grid.ColumnSpan="8"
-                    FontWeight="Bold">
+                    FontWeight="Bold" SelectionChanged="ListSettings_SelectionChanged" ItemsSource="{Binding list}">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
@@ -434,7 +434,7 @@
                        FontSize="60"
                        TextAlignment="Center"
                        FontWeight="Bold"
-                       Name="CountPointsTb">2
+                       Name="CountPointsTb">
             </TextBlock>
         </StackPanel>
         
@@ -452,6 +452,11 @@
                        TextAlignment="Center"
                        FontWeight="Bold"
                        Name="myLevelTb"></TextBlock>
+            <TextBlock Foreground="White"
+           FontSize="60"
+           TextAlignment="Center"
+           FontWeight="Bold"
+           Name="Exp"></TextBlock>
         </StackPanel>
         
         <StackPanel Orientation="Vertical"

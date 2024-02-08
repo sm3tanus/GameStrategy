@@ -25,8 +25,8 @@ namespace GameStrategy
         {
             InitializeComponent();
             mainFrame.NavigationService.Navigate(new Pages.ChoiceHero());
-            Hero hero = new Hero("luna", 1,1,5,1,1,1,1,11,1,1,1,1,1,1,1);
-            CRUD.CreateHero(hero);
+            Rogue rogue = new Rogue("luna");
+            CRUD.CreateRogue(rogue);
         }
     }
 }

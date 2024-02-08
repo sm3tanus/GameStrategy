@@ -6,14 +6,14 @@ namespace GameStrategy
 {
     public class CRUD
     {
-        public static void CreateHero(Hero hero)
+        public static void CreateRogue(Rogue rogue)
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("StrategyGame");
             var collection = database.GetCollection<Hero>("HeroCollection");
-            collection.InsertOne(hero);
+            collection.InsertOne(rogue);
         }
-        public static List<Hero> GetHero() 
+        public static List<Hero> GetHero()
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("StrategyGame");

@@ -27,7 +27,7 @@ namespace GameStrategy.Pages
 
         private void warriorBt_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new CreateHero());
+            NavigationService.Navigate(new ListOfMyHero());
         }
     }
 }
