@@ -58,7 +58,34 @@
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Width="240">
+                        <GridViewColumn Width="213">
+                            <StackPanel>
+                                <Image Source="\Images\warrior.png"
+                                        Width="80">
+                                </Image>
+                                <TextBlock HorizontalAlignment="Center">
+                                    name
+                                </TextBlock>
+                            </StackPanel>
+
+                            <GridViewColumn.HeaderContainerStyle>
+                                <Style TargetType="{x:Type GridViewColumnHeader}">
+                                    <Setter Property="Background" Value="#FF7684FF" />
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="BorderBrush" Value="#FF7684FF"/>
+                                    <Setter Property="Height" Value="130"/>
+                                </Style>
+                            </GridViewColumn.HeaderContainerStyle>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Name}" Foreground="White" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <GridViewColumn Width="213">
                             <StackPanel>
                                 <Image Source="\Images\health.png"
                                         Width="80">
@@ -85,7 +112,7 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Width="240">
+                        <GridViewColumn Width="213">
                             <StackPanel>
                                 <Image Source="\Images\mana.png"
                                        Width="80"></Image>
@@ -109,7 +136,7 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Width="240">
+                        <GridViewColumn Width="213">
                             <StackPanel>
                                 <Image Source="\Images\p.damage.png"
                                        Width="80"></Image>
@@ -132,7 +159,7 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Width="240">
+                        <GridViewColumn Width="213">
                             <StackPanel>
                                 <Image Source="\Images\armor.png"
                                        Width="80"></Image>
@@ -155,7 +182,7 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Width="240">
+                        <GridViewColumn Width="213">
                             <StackPanel>
                                 <Image Source="\Images\mana_damage.png"
                                         Width="80"></Image>
@@ -178,7 +205,7 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Width="240">
+                        <GridViewColumn Width="213">
                             <StackPanel>
                                 <Image Source="\Images\magic_defense.png"
                                         Width="80"></Image>
@@ -201,7 +228,7 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Width="240">
+                        <GridViewColumn Width="213">
                             <StackPanel>
                                 <Image Source="\Images\percent.png"
                                         Width="80"></Image>
@@ -224,7 +251,7 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Width="240">
+                        <GridViewColumn Width="213">
                             <StackPanel>
                                 <Image Source="\Images\crit_damage.png"
                                         Width="80"></Image>
@@ -400,7 +427,7 @@
             Name="CountVitalityTb"/> 
 
         <Button
-            HorizontalAlignment="Right"
+            HorizontalAlignment="Left"
             Grid.Row="2"
             Grid.Column="2"
             IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
@@ -411,7 +438,7 @@
             Width="50"
             Height="50"
             FontWeight="Bold"
-            Name="AddVitalityBt" Margin="0,110,190,110" Click="AddVitalityBt_Click">
+            Name="AddVitalityBt" Click="AddVitalityBt_Click">
             +
         </Button>
 
@@ -442,21 +469,32 @@
         <StackPanel Grid.Column="3"
                     Grid.ColumnSpan="2"
                     Grid.Row="1"
-                    Orientation="Vertical">
-            <TextBlock Foreground="White"
-                       FontSize="60"
-                       TextAlignment="Center"
-                       FontWeight="Bold">Your level:</TextBlock>
-            <TextBlock Foreground="White"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            
+            <StackPanel Orientation="Horizontal">
+                <Image Source="\Images\lvl.png"
+                   Width="80"
+                   Height="80"></Image>
+                <TextBlock Foreground="White"
                        FontSize="60"
                        TextAlignment="Center"
                        FontWeight="Bold"
                        Name="myLevelTb"></TextBlock>
-            <TextBlock Foreground="White"
-           FontSize="60"
-           TextAlignment="Center"
-           FontWeight="Bold"
-           Name="Exp"></TextBlock>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <Image Source="\Images\experience.png"
+                   Width="80"
+                   Height="80"></Image>
+                <TextBlock Foreground="White"
+                   FontSize="60"
+                   TextAlignment="Center"
+                   FontWeight="Bold"
+                   Name="Exp"></TextBlock>
+            </StackPanel>
+            
         </StackPanel>
         
         <StackPanel Orientation="Vertical"
@@ -467,5 +505,21 @@
             <Button Background="#FF7684FF"
                     Name="AddPointsBt" Click="AddPointsBt_Click">+1000</Button>
         </StackPanel>
+
+        <Button Grid.Row="3"
+                Width="100"
+                Height="50"
+                Background="#FF7684FF"
+                Name="SaveBt"
+                FontSize="30" Click="SaveBt_Click">Save</Button>
+
+        <Button Grid.Row="3"
+                Grid.Column="1"
+                Width="200"
+                Height="50"
+                Background="#FF7684FF"
+                Name="AddHeroBt"
+                FontSize="30" Click="AddHeroBt_Click">Add hero</Button>
+
     </Grid>
 </Page>

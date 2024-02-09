@@ -10,7 +10,7 @@
         Width="1920"
         Background="#FFA3AAE8"
         WindowState="Maximized"
-        ResizeMode="NoResize">
+       >
     <Grid>
         <Frame Name="mainFrame"></Frame>
     </Grid>

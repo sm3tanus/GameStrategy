@@ -151,6 +151,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\CreateHero.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ListOfMyHero.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -159,6 +163,9 @@
   <ItemGroup>
     <Compile Include="Pages\ChoiceHero.xaml.cs">
       <DependentUpon>ChoiceHero.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CreateHero.xaml.cs">
+      <DependentUpon>CreateHero.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ListOfMyHero.xaml.cs">
       <DependentUpon>ListOfMyHero.xaml</DependentUpon>
@@ -249,6 +256,8 @@
     <Analyzer Include="..\packages\AWSSDK.SecurityToken.3.7.100.14\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\experience.png" />
+    <Resource Include="Images\lvl.png" />
     <Content Include="mongocrypt.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

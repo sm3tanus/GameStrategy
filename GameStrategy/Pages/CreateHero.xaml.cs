@@ -14,18 +14,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GameStrategy
+namespace GameStrategy.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для CreateHero.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CreateHero : Page
     {
-        public MainWindow()
+        public CreateHero()
         {
             InitializeComponent();
-            mainFrame.NavigationService.Navigate(new Pages.ChoiceHero());
-            
+        }
+
+        private void AddHeroBt_Click(object sender, RoutedEventArgs e)
+        {
+            Rogue rogue = new Rogue(NameTb.Text);
+            CRUD.CreateRogue(rogue);
+            NavigationService.Navigate(new ListOfMyHero(ChoiceHero.type));
         }
     }
 }

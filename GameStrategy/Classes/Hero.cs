@@ -42,6 +42,7 @@ namespace GameStrategy.Classes
         }
 
         public ObjectId _id;
+        public string _t;
         public string Name { get { return _name; } set { _name = value; } }
         public int LevelPoints { get { return _levelPoints; }
             set
@@ -58,13 +59,16 @@ namespace GameStrategy.Classes
         public int Level { get { return _level; } 
             set 
             {
-                //что то максимально странное
-                //MessageBox.Show($"v{value}  l{_level}");
+                //MessageBox.Show($"v{value} l{_level}");
                 _level = value;
-                if (_level == 0)
+                if (_level == 0 )
                 {
                     expirienceToNextLevel = 1000;
                     return;
+                }
+                if (value >= 99)
+                {
+                    _level = 99;
                 }
                 expirienceToNextLevel = 0;
                 CalculateExpirience();
@@ -89,15 +93,11 @@ namespace GameStrategy.Classes
         public int Armor { get { return _armor; } set { _armor = value; } }
         public int MagicDamage { get { return _magicDamage; } set { _magicDamage = value; } }
         public int MagicDefense { get { return _magicDefense; } set { _magicDefense = value; } }
-        public int CritChance { get { return _critChanсe; } set { _critChanсe = value; } }
-        public int CritDamage { get { return _critDamage; } set { _critDamage = value; } }
+        public int CritChance { get { return (int)(0.2 * _dexterity); } set { _critChanсe = value; } }
+        public int CritDamage { get { return _dexterity; } set { _critDamage = value; } }
         public Hero(string name)
         {
             _name = name;
-            MagicDamage = (int)(0.2 * _intelligence);
-            MagicDefense = (int)(0.5 * _intelligence);
-            CritChance = (int)(0.2 * _dexterity);
-            CritDamage = (int)(1 * _dexterity);
         }
     }
 }
