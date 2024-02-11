@@ -3,25 +3,27 @@ using GameStrategy.Classes;
 using System.Collections.Generic;
 using MongoDB.Bson;
 using System.Windows;
+using System;
 
 namespace GameStrategy
 {
     public class CRUD
     {
-        public static void CreateRogue(Rogue rogue)
+        public static void CreateHero(Hero hero, string type)
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("StrategyGame");
             var collection = database.GetCollection<Hero>("HeroCollection");
-            collection.InsertOne(rogue);
+            hero._t = type;
+            collection.InsertOne(hero);
         }
         public static List<Hero> GetHero(string type)
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("StrategyGame");
             var collection = database.GetCollection<Hero>("HeroCollection");
-            List<Hero> result = new List<Hero>();
-            result = collection.Find(x => x._t == type).ToList();
+            var filter = Builders<Hero>.Filter.Eq("_t", type);
+            List<Hero> result = collection.Find(filter).ToList();
             return result;
         }
         public static void UpdateRogue(Rogue rogue)

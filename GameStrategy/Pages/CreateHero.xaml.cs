@@ -28,8 +28,8 @@ namespace GameStrategy.Pages
 
         private void AddHeroBt_Click(object sender, RoutedEventArgs e)
         {
-            Rogue rogue = new Rogue(NameTb.Text);
-            CRUD.CreateRogue(rogue);
+            Hero hero = new Hero(NameTb.Text);
+            CRUD.CreateHero(hero, ListOfMyHero.type_class);
             NavigationService.Navigate(new ListOfMyHero(ChoiceHero.type));
         }
     }

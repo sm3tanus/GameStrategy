@@ -22,9 +22,11 @@ namespace GameStrategy.Pages
     public partial class ListOfMyHero : Page
     {
         Hero selectedHero;
+        public static string type_class;
         public ListOfMyHero(string type)
         {
             InitializeComponent();
+            type_class = type;
             List<Hero> list = CRUD.GetHero(type);
             ListSettings.ItemsSource = list;
             DataContext = this;
